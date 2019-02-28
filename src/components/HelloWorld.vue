@@ -25,22 +25,32 @@ export default {
 <style lang="scss" scoped >
 //------------sass语言--------------------
 
+//声明变量
 $color: red;
 $fontSize: 50;
 $text: ".b";
+
 .a {
-  color: red;
+  //引用变量
+  color: $color;
   #{$text} {
     font-size: #{$fontSize}px;
+    //& 是父选择器
+    &:hover{
+     color: blue;
+  }
   }
 }
 
 //------------------ 原始写法 ----------------------------
-// .a {
-//   color: red;
-// }
-// .a .b {
-//   font-size: 50px;
-//   background: pink;
-// }
+.a {
+  color: red;
+}
+.a .b {
+  font-size: 50px;
+  background: pink;
+}
+.a .b:hover{
+  color: blue;
+}
 </style>
